@@ -24,13 +24,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "nodemon server"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "node server.js"
   },
   "browserslist": {
     "production": [
