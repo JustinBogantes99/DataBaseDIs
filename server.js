@@ -27,9 +27,13 @@ const securityRouter = require('./routes/Security');
 const salaRouter = require('./routes/Sala');
 const usuarioRouter = require('./routes/Usuario');
 
+app.get('/', function(req, res){
+    return res.json({success: true, message: "Bienvenido GYM API :D"})
+})
 app.use('/Seguridad', securityRouter);
 app.use('/Sala', salaRouter);
 app.use('/Usuario', usuarioRouter);
+
 
 app.listen(port, () => {
     console.log(`Server is online on port: ${port}`);
