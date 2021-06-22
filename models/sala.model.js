@@ -9,7 +9,7 @@ const salaSchema = new Schema({
     clases:[{nombre:String, capacidadMaxima:Number, diaEjecucion:String, instructor:{cedula:String, nombreCompleto:String, celular:Number, correo:String, TRol:String,
              estado:Boolean, cuenta:{nombreUsuario:String,contrasenia:String}, servicios:{nombre:String, precio:Number, maximoPersonas:Number}}, 
             servicio:{nombre:String, precio:Number, maximoPersonas:Number}, horaInicio:{type:String}, horaFin:{type:String}, precio: {type:Number},
-            pagos:[{fechaPago:String, clienteNombreUsuario:String, monto:Number, estado:String, metodoPago:String}]}],
+            pagos:[{fechaPago:String, clienteNombreUsuario:String, monto:Number, estado:String, metodoPago:String}], estado:String}],
     servicios:[{nombre:String, precio:Number, maximoPersonas:Number}]
 })
 
