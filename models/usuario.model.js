@@ -10,6 +10,7 @@ const usuarioSchema = new Schema({
     cuenta:{nombreUsuario:String, contrasenia:String},
     sala:{idSala:String, nombreSala:String},
     estado:{type:Boolean},
+    notificaciones:[{type:String}],
     herencia:[mongoose.Schema.Types.Mixed]
 })
 

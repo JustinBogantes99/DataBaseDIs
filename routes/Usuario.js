@@ -57,5 +57,28 @@ router.route('/editarUsuario').post((req, res) => {
     .catch(err => res.status(400).json('Error: '+ err));
 });
 
+router.route('/agregarNotificacion').post((req, res) => {
+    Usuario.find({"cuenta.nombreUsuario": req.body.cuenta.nombreUsuario})
+    .then(usuarios => {
+        usuarios[0].notificaciones.push(req.body.notificaciones)
+
+        usuarios[0].save()
+        .then(() => res.json('Notificación Agregada!'))
+        .catch(err => res.status(400).json('Error: ' + err));     
+    })
+    .catch(err => res.status(400).json('Error: '+ err));
+});
+
+router.route('/editarNotificaciones').post((req, res) => {
+    Usuario.find({"cuenta.nombreUsuario": req.body.cuenta.nombreUsuario})
+    .then(usuarios => {
+        usuarios[0].notificaciones = req.body.notificaciones
+
+        usuarios[0].save()
+        .then(() => res.json('Notificaciones Editadas!'))
+        .catch(err => res.status(400).json('Error: ' + err));     
+    })
+    .catch(err => res.status(400).json('Error: '+ err));
+});
 
 module.exports = router;
